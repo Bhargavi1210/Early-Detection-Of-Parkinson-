@@ -79,8 +79,8 @@ function updateElapsedTime() {
 }
 
 function uploadAudio() {
-  // const fileInput = document.getElementById('playback');
-  const fileInput= "blob:http://localhost:5175/c93004ea-79d1-4ace-8bce-8a6de905d1fb"
+  const fileInput = document.getElementById('playback');
+  // const fileInput= "blob:http://localhost:5175/c93004ea-79d1-4ace-8bce-8a6de905d1fb"
   const file = fileInput.files[0];
   const formData = new FormData();
   formData.append('audioFile', file);
