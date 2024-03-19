@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css"/>
+    <link rel="icon" type="image/svg+xml" href="/pdlogo.svg" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    
+    <title>Parkinder</title>
+  </head>
+  <body>
+      <div class="brand">
+        <img class="logo" src="/logo.svg" alt="logo" >
+        <h1>Parkinder</h1>
+      </div>
+      <div class="greeting">
+        <h1>
+          Hello, Nigga
+        </h1>
+      </div>
+    <header class="header" id="header">
+      <nav class="nav container">
+
+          <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                  <li class="nav__item">
+                      <a href="#home" class="nav__link active-link">
+                          <i class='bx bx-home-alt nav__icon'></i>
+                          <!-- <span class="nav__name">Home</span> -->
+                      </a>
+                  </li>
+                  
+                  <li class="nav__item">
+                      <a href="#community" class="nav__link">
+                          <i class='bx bx-group nav__icon'></i>
+                          <!-- <span class="nav__name">Community</span> -->
+                      </a>
+                  </li>
+
+                  <li class="nav__item">
+                      <a href="#account" class="nav__link">
+                          <i class='bx bx-cog nav__icon'></i>
+                          <!-- <span class="nav__name">Account</span> -->
+                      </a>
+                  </li>
+              </ul>
+          </div>
+
+          <img src="assets/img/perfil.png" alt="" class="nav__img">
+      </nav>
+  </header>
+
+    <main>
+
+      <button class="mic-toggle" id="mic">
+        <span class="material-icons">
+          <img class="mic-icon" src="/mic-icon.svg" alt="mic" />
+        </span>
+      </button>
+
+      <div id="timer" class="cssbuttons-io-button">
+        00:00
+      </div>
+
+      <div class="instructions">
+        <p>
+          Press the Mic Button above to start recording.
+        </p>
+      </div>
+
+
+      <audio id="playback" class="playback is-hidden" controls></audio>
+      <!-- <div> 
+        <button onclick="document.getElementById('playback').play()">Play</button> 
+        <button onclick="document.getElementById('playback').pause()">Pause</button> 
+        <button onclick="document.getElementById('playback').volume += 0.1">Vol +</button> 
+        <button onclick="document.getElementById('playback').volume -= 0.1">Vol -</button> 
+      </div> -->
+
+      <button id='generate' class="generate is-hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+        </svg>
+      
+        <div class="btn-text">
+          Upload
+        </div>
+      
+      </button>
+    </main>
+
+
+
+    <script src="/main.js"></script>
+  </body>
+</html>
