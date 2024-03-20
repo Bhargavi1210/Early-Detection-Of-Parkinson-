@@ -11,6 +11,7 @@ let is_recording = false;
 
 let recorder = null;
 
+let blob;
 let chunks = [];
 
 function SetUpAudio(){
@@ -36,7 +37,7 @@ function SetupStream(stream){
     chunks.push(e.data);
   };
   recorder.onstop = e =>{
-    const blob = new Blob(chunks,{type: "audio/ogg; codecs=opus"});
+    blob = new Blob(chunks,{type: "audio/ogg; codecs=opus"});
     chunks=[];
     const audioURL = window.URL.createObjectURL(blob);
     playback.src = audioURL;
@@ -79,13 +80,14 @@ function updateElapsedTime() {
 }
 
 function uploadAudio() {
-  const fileInput = document.getElementById('playback');
-  // const fileInput= "blob:http://localhost:5175/c93004ea-79d1-4ace-8bce-8a6de905d1fb"
-  const file = fileInput.files[0];
-  const formData = new FormData();
-  formData.append('audioFile', file);
+  // const fileInput = document.getElementById('playback');
+  // // const fileInput= "blob:http://localhost:5175/c93004ea-79d1-4ace-8bce-8a6de905d1fb"
+  // const file = fileInput.files[0];
 
-  fetch('/api/process_audio', {
+  const formData = new FormData();
+  formData.append('audioFile', blob);
+
+  fetch("/api/process_audio", {
       method: 'POST',
       body: formData
   })
